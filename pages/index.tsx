@@ -3,7 +3,7 @@ import Head from "next/head";
 import Header from "../components/Header";
 
 const Home: React.FC = () => (
-  <div className="font-sans text-center">
+  <div>
     <Head>
       <title>manen</title>
     </Head>
