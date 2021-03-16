@@ -8,6 +8,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "@octokit/rest": "^18.3.5",
+    "@octokit/types": "^6.12.2",
     "@tippyjs/react": "^4.2.4",
     "autoprefixer": "^10.2.5",
     "next": "10.0.9",

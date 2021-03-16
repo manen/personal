@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import Header from "../../components/Header";
+import { Octokit } from "@octokit/rest";
 
 type Data = {
   title: string;
@@ -22,6 +23,8 @@ type ReadmeState = {
   data: string;
 };
 
+const octokit = new Octokit();
+
 const Slug: React.FC = () => {
   const router = useRouter();
   const { slug } = router.query;
@@ -39,35 +42,24 @@ const Slug: React.FC = () => {
     },
   });
 
-  const [readme, setReadme] = useState<ReadmeState>({
-    loading: true,
-    data: "",
-  });
-
   useEffect(() => {
-    fetch("https://api.github.com/repos/manen/" + slug)
-      .then(a => a.json())
-      .then(data => {
+    if (!slug) return;
+
+    octokit.repos
+      .get({
+        owner: "manen",
+        repo: typeof slug == "string" ? slug : slug.join(""),
+      })
+      .then(({ data }) => {
         setRepo({
           loading: false,
           data: {
             title: data.name,
-            desc: data.description,
+            desc: data.description || "",
             archived: data.archived,
-            lang: data.language,
+            lang: data.language || "",
             branch: data["default_branch"],
           },
-        });
-      });
-  }, []);
-
-  useEffect(() => {
-    fetch("https://cdn.jsdelivr.net/gh/manen/" + slug + "@latest/README.md")
-      .then(a => a.text())
-      .then(data => {
-        setReadme({
-          loading: false,
-          data,
         });
       });
   }, []);

@@ -4,6 +4,7 @@ import Tippy from "@tippyjs/react";
 import "tippy.js/themes/material.css";
 import Header from "../../components/Header";
 import Link from "next/link";
+import { Octokit } from "@octokit/rest";
 
 type Data = ProjectProps[];
 
@@ -12,6 +13,8 @@ type State = {
   data: Data;
 };
 
+const octokit = new Octokit();
+
 const Projects: React.FC = () => {
   const [repos, setRepos] = useState<State>({
     loading: true,
@@ -19,16 +22,19 @@ const Projects: React.FC = () => {
   });
 
   useEffect(() => {
-    fetch("https://api.github.com/users/manen/repos")
-      .then(a => a.json())
-      .then(data => {
+    octokit.repos
+      .listForUser({
+        username: "manen",
+        sort: "updated",
+      })
+      .then(({ data }) => {
         setRepos({
           loading: false,
           data: data
-            .filter((repo: GithubRepo) => {
+            .filter(repo => {
               return !repo.archived;
             })
-            .map((repo: GithubRepo) => {
+            .map(repo => {
               return {
                 title: repo.name,
                 desc: repo.description,
@@ -71,23 +77,16 @@ const Projects: React.FC = () => {
   );
 };
 
-type GithubRepo = {
-  name: string;
-  description: string;
-  language: string;
-  archived: string;
-};
-
 type ProjectProps = {
   title: string;
   desc: string;
   lang: string;
-  link: string;
+  link?: string;
 };
 
 const Project: React.FC<ProjectProps> = props => (
   <Tippy content={<p>{props.desc}</p>}>
-    <Link href={props.link}>
+    <Link href={props.link || ""}>
       <div
         title={props.desc}
         className="m-4 w-48 h-24 bg-gray-200 hover:bg-gray-300 dark:bg-nice-800 dark:hover:bg-nice-700 rounded-lg transition flex items-center justify-center cursor-pointer">
