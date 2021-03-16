@@ -70,14 +70,14 @@ const Slug: React.FC = () => {
         <title>{repo.data.title} - manen</title>
       </Head>
       <Header />
+      <div className="p-4 bg-gray-200 dark:bg-nice-800">
+        This project is imported from GitHub.
+      </div>
       {repo.data.archived ? (
         <div className="p-4 text-black bg-yellow-300">
           This project is archived.
         </div>
       ) : null}
-      <div className="p-4 bg-gray-200 dark:bg-nice-800">
-        This project is imported from GitHub.
-      </div>
       <div className="m-4">
         <div className="m-4 flex flex-row justify-center items-center">
           <h1>{repo.data.title}</h1>
