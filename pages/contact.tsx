@@ -12,7 +12,7 @@ const Contact: React.FC = () => (
       <h1 className="text-2xl">Contact</h1>
       <div className="m-6">
         <a target="_blank" href="https://discord.com/users/449871144246312961">
-          <div className="m-4 p-2 bg-discord-50 text-black rounded-xl">
+          <div className="m-4 p-2 bg-bruh-50 text-black rounded-xl">
             <h2 className="text-xl">Discord</h2>
             <p>I prefer to use Discord for communication.</p>
           </div>

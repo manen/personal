@@ -64,7 +64,6 @@ const Slug: React.FC = () => {
       });
   }, []);
 
-  if (repo.loading) return <div>bruh</div>;
   return (
     <div>
       <Head>
@@ -76,6 +75,9 @@ const Slug: React.FC = () => {
           This project is archived.
         </div>
       ) : null}
+      <div className="p-4 bg-gray-200 dark:bg-nice-800">
+        This project is imported from GitHub.
+      </div>
       <div className="m-4">
         <div className="m-4 flex flex-row justify-center items-center">
           <h1>{repo.data.title}</h1>
