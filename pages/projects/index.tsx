@@ -23,21 +23,19 @@ const Projects: React.FC = () => {
       .then(data => {
         setRepos({
           loading: false,
-          data: data.map(
-            (repo: {
-              name: string;
-              description: string;
-              html_url: string;
-              language: string;
-            }) => {
+          data: data
+            .filter((repo: GithubRepo) => {
+              return !repo.archived;
+            })
+            .map((repo: GithubRepo) => {
               return {
                 title: repo.name,
                 desc: repo.description,
-                link: repo["html_url"],
                 lang: repo.language,
+                archived: repo.archived,
+                link: repo["html_url"],
               };
-            }
-          ),
+            }),
         });
       });
   }, []);
@@ -54,7 +52,8 @@ const Projects: React.FC = () => {
           <div className="m-4 flex flex-wrap"></div>
         </div>
         <div>
-          <h1>All</h1>
+          <h1 className="m-4 mb-0 text-l">All</h1>
+          <p className="text-xs">Taken from my GitHub</p>
           <div className="m-4 flex flex-wrap">
             {repos.data.map(repo => (
               <Project
@@ -70,6 +69,14 @@ const Projects: React.FC = () => {
       </div>
     </div>
   );
+};
+
+type GithubRepo = {
+  name: string;
+  description: string;
+  language: string;
+  archived: string;
+  html_url: string;
 };
 
 type ProjectProps = {
