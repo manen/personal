@@ -5,6 +5,10 @@ const Header: React.FC = () => (
   <div className="border-b border-gray-200 dark:border-gray-700">
     <header className="m-4 flex flex-row justify-center items-center">
       <div className="flex-1 text-left flex-row">
+        {
+          // If anyone knows how to center this, a PR would be extremely
+          // appreciated
+        }
         <h1 className="text-2xl">
           <Link href="/">manen</Link>
         </h1>

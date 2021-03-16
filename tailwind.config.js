@@ -17,6 +17,8 @@ module.exports = {
         800: "#242526",
         900: "#141516",
       },
+      // bruh is a collection of colors used for various
+      // things
       bruh: {
         50: "#7289da",
       },
