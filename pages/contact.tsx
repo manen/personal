@@ -25,7 +25,10 @@ const Contact: React.FC = () => (
         </a>
       </div>
     </div>
-    <a target="_blank" href="https://www.youtube.com/watch?v=I0L7QWsDffY">
+    <a
+      className="text-xs text-gray-400 dark:text-gray-600"
+      target="_blank"
+      href="https://www.youtube.com/watch?v=I0L7QWsDffY">
       Spammers get blocked.
     </a>
   </div>
