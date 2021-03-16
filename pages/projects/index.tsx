@@ -37,8 +37,8 @@ const Projects: React.FC = () => {
             .map(repo => {
               return {
                 title: repo.name,
-                desc: repo.description,
-                lang: repo.language,
+                desc: repo.description || "",
+                lang: repo.language || "",
                 archived: repo.archived,
               };
             }),
