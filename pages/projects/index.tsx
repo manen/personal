@@ -1,5 +1,7 @@
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
+import Tippy from "@tippyjs/react";
+import "tippy.js/themes/material.css";
 import Header from "../../components/Header";
 
 type Data = ProjectProps[];
@@ -79,11 +81,13 @@ type ProjectProps = {
 
 const Project: React.FC<ProjectProps> = props => (
   <a target="_blank" href={props.link}>
-    <div
-      title={props.desc}
-      className="m-4 w-48 h-24 bg-gray-200 hover:bg-gray-300 dark:bg-nice-800 dark:hover:bg-nice-700 rounded-lg transition flex items-center justify-center">
-      <h1 className="text-lg">{props.title}</h1>
-    </div>
+    <Tippy content={<p>{props.desc}</p>}>
+      <div
+        title={props.desc}
+        className="m-4 w-48 h-24 bg-gray-200 hover:bg-gray-300 dark:bg-nice-800 dark:hover:bg-nice-700 rounded-lg transition flex items-center justify-center">
+        <h1 className="text-lg">{props.title}</h1>
+      </div>
+    </Tippy>
   </a>
 );
 
