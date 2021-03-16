@@ -9,6 +9,7 @@ type Data = {
   archived: boolean;
   lang: string;
   branch: string;
+  parent?: string;
 };
 
 type State = {
@@ -42,8 +43,6 @@ const Slug: React.FC = () => {
     loading: true,
     data: "",
   });
-
-  ("https://raw.githubusercontent.com/manen/website-really-old/main/README.md");
 
   useEffect(() => {
     fetch("https://api.github.com/repos/manen/" + slug)
