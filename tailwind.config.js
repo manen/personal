@@ -4,9 +4,7 @@ module.exports = {
   purge: [],
   darkMode: "media", // or 'media' or 'class'
   theme: {
-    extend: {},
     colors: {
-      ...colors,
       nice: {
         50: "#a4a5a6",
         100: "#949596",
@@ -22,6 +20,20 @@ module.exports = {
       discord: {
         50: "#7289da",
       },
+
+      transparent: colors.transparent,
+      current: colors.current,
+
+      black: colors.black,
+      white: colors.white,
+      gray: colors.coolGray,
+      red: colors.red,
+      yellow: colors.amber,
+      green: colors.emerald,
+      blue: colors.blue,
+      indigo: colors.indigo,
+      purple: colors.violet,
+      pink: colors.pink,
     },
   },
   variants: {
