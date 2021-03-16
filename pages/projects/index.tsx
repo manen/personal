@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Tippy from "@tippyjs/react";
 import "tippy.js/themes/material.css";
 import Header from "../../components/Header";
+import Link from "next/link";
 
 type Data = ProjectProps[];
 
@@ -33,7 +34,6 @@ const Projects: React.FC = () => {
                 desc: repo.description,
                 lang: repo.language,
                 archived: repo.archived,
-                link: repo["html_url"],
               };
             }),
         });
@@ -61,7 +61,7 @@ const Projects: React.FC = () => {
                 title={repo.title}
                 desc={repo.desc}
                 lang={repo.lang}
-                link={repo.link}
+                link={"/projects/" + repo.title}
               />
             ))}
           </div>
@@ -76,7 +76,6 @@ type GithubRepo = {
   description: string;
   language: string;
   archived: string;
-  html_url: string;
 };
 
 type ProjectProps = {
@@ -87,15 +86,15 @@ type ProjectProps = {
 };
 
 const Project: React.FC<ProjectProps> = props => (
-  <a target="_blank" href={props.link}>
-    <Tippy content={<p>{props.desc}</p>}>
+  <Tippy content={<p>{props.desc}</p>}>
+    <Link href={props.link}>
       <div
         title={props.desc}
-        className="m-4 w-48 h-24 bg-gray-200 hover:bg-gray-300 dark:bg-nice-800 dark:hover:bg-nice-700 rounded-lg transition flex items-center justify-center">
+        className="m-4 w-48 h-24 bg-gray-200 hover:bg-gray-300 dark:bg-nice-800 dark:hover:bg-nice-700 rounded-lg transition flex items-center justify-center cursor-pointer">
         <h1 className="text-lg">{props.title}</h1>
       </div>
-    </Tippy>
-  </a>
+    </Link>
+  </Tippy>
 );
 
 export default Projects;
