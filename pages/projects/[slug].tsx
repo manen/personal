@@ -73,7 +73,9 @@ const Slug: React.FC = () => {
       <div className="p-4 bg-gray-200 dark:bg-nice-800">
         <div>This project is imported from GitHub.</div>
         <div className="text-xs text-gray-500 dark:text-nice-200">
-          <a href={"https://github.com/manen/" + repo.data.title}>
+          <a
+            target="_blank"
+            href={"https://github.com/manen/" + repo.data.title}>
             Open on GitHub
           </a>
         </div>
