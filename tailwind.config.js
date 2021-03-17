@@ -21,6 +21,7 @@ module.exports = {
       // things
       bruh: {
         50: "#7289da",
+        100: "#ffcc5b",
       },
 
       transparent: colors.transparent,
