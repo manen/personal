@@ -49,6 +49,7 @@ const Projects: React.FC = () => {
     <div>
       <Head>
         <title>Projects - manen</title>
+        <meta name="description" content="manen's projects" />
       </Head>
       <Header />
       <div className="m-4">

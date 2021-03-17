@@ -68,6 +68,7 @@ const Slug: React.FC = () => {
     <div>
       <Head>
         <title>{repo.data.title} - manen</title>
+        <meta name="description" content={"Project " + slug + " by manen"} />
       </Head>
       <Header />
       <div className="p-4 bg-gray-200 dark:bg-nice-800">

@@ -6,6 +6,7 @@ const Contact: React.FC = () => (
   <div>
     <Head>
       <title>Contact - manen</title>
+      <meta name="description" content="Contact manen" />
     </Head>
     <Header />
     <div className="m-4">
