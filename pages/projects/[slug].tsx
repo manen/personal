@@ -71,9 +71,9 @@ const Slug: React.FC = () => {
         <meta name="description" content={"Project " + slug + " by manen"} />
       </Head>
       <Header />
-      <div className="p-4 bg-gray-200 dark:bg-nice-800">
+      <div className="p-4 bg-accent-100 dark:bg-accent-800">
         <div>This project is imported from GitHub.</div>
-        <div className="text-xs text-gray-500 dark:text-nice-200">
+        <div className="text-xs text-accent-500 dark:text-accent-400">
           <a
             target="_blank"
             href={"https://github.com/manen/" + repo.data.title}>

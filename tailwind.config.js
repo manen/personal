@@ -5,12 +5,12 @@ module.exports = {
   darkMode: "media", // or 'media' or 'class'
   theme: {
     colors: {
-      nice: {
-        50: "#a4a5a6",
-        100: "#949596",
-        200: "#848586",
-        300: "#747576",
-        400: "#646566",
+      accent: {
+        50: "#ffffff",
+        100: "#eeeeee",
+        200: "#dddddd",
+        300: "#cccccc",
+        400: "#bbbbbb",
         500: "#545556",
         600: "#444546",
         700: "#343536",
