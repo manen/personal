@@ -11,17 +11,12 @@ type Data = {
   archived: boolean;
   lang: string;
   branch: string;
-  parent?: string;
+  fork: boolean;
 };
 
 type State = {
   loading: boolean;
   data: Data;
-};
-
-type ReadmeState = {
-  loading: boolean;
-  data: string;
 };
 
 const octokit = new Octokit();
@@ -40,6 +35,7 @@ const Slug: React.FC = () => {
       archived: false,
       lang: "bruh",
       branch: "main",
+      fork: true,
     },
   });
 
@@ -60,6 +56,7 @@ const Slug: React.FC = () => {
             archived: data.archived,
             lang: data.language || "",
             branch: data["default_branch"],
+            fork: data.fork,
           },
         });
       });
@@ -89,9 +86,13 @@ const Slug: React.FC = () => {
       ) : null}
       <div className="m-4">
         <div className="m-4 flex flex-row justify-center items-center">
-          <div className="p-2 transition-colors bg-accent-200 hover:bg-accent-300 dark:bg-accent-800 dark:hover:bg-accent-700 rounded-lg cursor-pointer">
-            <Link href={"/donate?s=" + repo.data.title}>Sponsor</Link>
-          </div>
+          {repo.data.fork ? (
+            <p>Fork</p>
+          ) : (
+            <div className="p-2 transition-colors bg-accent-200 hover:bg-accent-300 dark:bg-accent-800 dark:hover:bg-accent-700 rounded-lg cursor-pointer">
+              <Link href={"/donate?s=" + repo.data.title}>Sponsor</Link>
+            </div>
+          )}
           <div className="flex-1 flex-row">
             <p className="text-xl">{repo.data.desc}</p>
           </div>
