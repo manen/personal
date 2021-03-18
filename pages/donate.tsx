@@ -22,14 +22,10 @@ const Donate: React.FC = () => {
             {s ? " to manen" : ""} on PayPal.
           </p>
         </div>
-        <div className="m-8">
-          <div className="m-4">
-            <p>
-              While it's completely optional, it'd be <b>really</b> greatly
-              appreciated.
-            </p>
-          </div>
-        </div>
+        <p className="m-6">
+          While it's completely optional, it'd be <b>really</b> greatly
+          appreciated.
+        </p>
         <div className="h-full flex justify-center">
           <a
             target="_blank"
