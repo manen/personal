@@ -19,7 +19,7 @@ const Contact: React.FC = () => (
           </div>
         </a>
         <a target="_blank" href="mailto:varga.bercel.i@gmail.com">
-          <div className="m-4 p-2 bg-accent-100 hover:bg-accent-200 dark:bg-accent-800 dark:hover:bg-accent-700 transition rounded-xl">
+          <div className="m-4 p-2 bg-accent-100 hover:bg-accent-200 dark:bg-accent-800 dark:hover:bg-accent-700 transition-colors rounded-xl">
             <h2 className="text-xl">E-mail</h2>
             <p>Only use as a fallback option.</p>
           </div>

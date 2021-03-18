@@ -90,7 +90,7 @@ const Project: React.FC<ProjectProps> = props => (
     <Link href={props.link || ""}>
       <div
         title={props.desc}
-        className="m-4 w-48 h-24 bg-accent-100 hover:bg-accent-200 dark:bg-accent-800 dark:hover:bg-accent-700 rounded-lg transition flex items-center justify-center cursor-pointer">
+        className="m-4 w-48 h-24 bg-accent-100 hover:bg-accent-200 dark:bg-accent-800 dark:hover:bg-accent-700 rounded-lg transition-colors flex items-center justify-center cursor-pointer">
         <h1 className="text-lg">{props.title}</h1>
       </div>
     </Link>

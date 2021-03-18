@@ -24,6 +24,9 @@ const Header: React.FC = () => (
         <span className="m-2">
           <Link href="/about">About</Link>
         </span>
+        <span className="m-2 p-2 transition-colors bg-accent-200 hover:bg-accent-300 dark:bg-accent-800 dark:hover:bg-accent-700 rounded-lg cursor-pointer">
+          <Link href="/donate">Donate</Link>
+        </span>
       </nav>
     </header>
   </div>
