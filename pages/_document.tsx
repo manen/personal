@@ -24,7 +24,7 @@ class Doc extends Document {
             async
             defer
             data-domain="manen.me"
-            src="https://stats.manen.me/js/index.js"></script>
+            src="https://analytics.manen.me/js/index.js"></script>
         </Head>
         <body className="p-0 m-0 font-sans text-center bg-accent-50 text-black dark:bg-accent-900 dark:text-accent-200">
           <Main />
