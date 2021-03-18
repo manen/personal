@@ -11,6 +11,7 @@ const Donate: React.FC = () => {
     <div>
       <Head>
         <title>Support {s || "my work"} - manen</title>
+        <meta name="description" content={"Donate to " + (s || "manen")} />
       </Head>
       <Header />
       <div className="m-4">
