@@ -18,7 +18,7 @@ class Doc extends Document {
 
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en" className="dark">
         <Head>
           <script
             async
