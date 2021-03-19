@@ -14,7 +14,7 @@ const ThankYou: React.FC = () => {
         <meta name="description" content="Post-donation page" />
       </Head>
       <Header />
-      <div className="m-4">
+      <main className="m-4">
         <div className="m-4 font-black">
           <h1 className="text-4xl">Thank you so much</h1>
           <p className="text-xl">for donating!</p>
@@ -23,7 +23,7 @@ const ThankYou: React.FC = () => {
           Your donation helps support {s || "me"}, and I <b>really</b>{" "}
           appreciate that.
         </p>
-      </div>
+      </main>
     </div>
   );
 };
