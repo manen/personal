@@ -1,7 +1,8 @@
 import React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import Header from "../components/Header";
+import Header from "../../components/Header";
+import Link from "next/link";
 
 const Donate: React.FC = () => {
   const router = useRouter();
@@ -30,6 +31,11 @@ const Donate: React.FC = () => {
           <a
             target="_blank"
             href="https://paypal.me/maneney"
+            onClick={() => {
+              setTimeout(() => {
+                location.href = "/donate/thankyou" + (s ? "?s=" + s : "");
+              }, 100);
+            }}
             className="px-14 py-8 bg-accent-200 hover:bg-accent-300 dark:bg-accent-800 dark:hover:bg-accent-700 text-xl transition-colors rounded-xl">
             Donate now
           </a>
