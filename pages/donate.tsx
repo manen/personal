@@ -29,7 +29,7 @@ const Donate: React.FC = () => {
         <div className="h-full flex justify-center">
           <a
             target="_blank"
-            href="https://www.paypal.com/pools/c/8xPkV1n2Q2"
+            href="https://paypal.me/maneney"
             className="px-14 py-8 bg-accent-200 hover:bg-accent-300 dark:bg-accent-800 dark:hover:bg-accent-700 text-xl transition-colors rounded-xl">
             Donate now
           </a>
