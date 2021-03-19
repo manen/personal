@@ -9,7 +9,7 @@ const Header: React.FC = () => (
           // If anyone knows how to center this, a PR would be extremely
           // appreciated
         }
-        <h1 className="text-2xl">
+        <h1 className="font-black text-3xl">
           <Link href="/">manen</Link>
         </h1>
         <p className="text-xs">I do things sometimes</p>

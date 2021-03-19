@@ -14,7 +14,7 @@ const Donate: React.FC = () => {
         <meta name="description" content={"Donate to " + (s || "manen")} />
       </Head>
       <Header />
-      <div className="m-4">
+      <main className="m-4">
         <h1 className="font-black text-5xl">Donate{s ? " to " + s : ""}</h1>
         <div className="mt-1 text-sm text-accent-500 dark:text-accent-400">
           <p>
@@ -34,7 +34,7 @@ const Donate: React.FC = () => {
             Donate now
           </a>
         </div>
-      </div>
+      </main>
     </div>
   );
 };

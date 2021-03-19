@@ -84,7 +84,7 @@ const Slug: React.FC = () => {
           This project is archived.
         </div>
       ) : null}
-      <div className="m-4">
+      <main className="m-4">
         <div className="m-4 flex flex-row justify-center items-center">
           {repo.data.fork ? (
             <p>Fork</p>
@@ -100,7 +100,7 @@ const Slug: React.FC = () => {
             <span className="m-2">{repo.data.lang}</span>
           </nav>
         </div>
-      </div>
+      </main>
     </div>
   );
 };

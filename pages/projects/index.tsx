@@ -52,7 +52,7 @@ const Projects: React.FC = () => {
         <meta name="description" content="manen's projects" />
       </Head>
       <Header />
-      <div className="m-4">
+      <main className="m-4">
         <h1 className="text-2xl">Projects</h1>
         <div>
           <h1 className="m-4 text-l"></h1>
@@ -73,7 +73,7 @@ const Projects: React.FC = () => {
             ))}
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 };

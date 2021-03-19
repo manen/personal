@@ -9,7 +9,7 @@ const Contact: React.FC = () => (
       <meta name="description" content="Contact manen" />
     </Head>
     <Header />
-    <div className="m-4">
+    <main className="m-4">
       <h1 className="text-2xl">Contact</h1>
       <div className="m-6 sm:grid sm:grid-cols-2 sm:divide-x sm:dark:divide-accent-900 sm:divide-white">
         <a target="_blank" href="https://discord.com/users/449871144246312961">
@@ -25,7 +25,7 @@ const Contact: React.FC = () => (
           </div>
         </a>
       </div>
-    </div>
+    </main>
     <a
       className="text-xs text-accent-400 dark:text-accent-600"
       target="_blank"

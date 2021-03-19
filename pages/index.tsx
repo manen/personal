@@ -6,7 +6,7 @@ const Home: React.FC = () => (
   <div>
     <Head>
       <title>manen</title>
-      <meta name="description" content="manen's project" />
+      <meta name="description" content="manen things" />
     </Head>
     <Header />
     <p className="m-4">Hi</p>

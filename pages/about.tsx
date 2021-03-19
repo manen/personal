@@ -9,7 +9,7 @@ const About: React.FC = () => (
       <meta name="description" content="About manen" />
     </Head>
     <Header />
-    <div className="m-4">
+    <main className="m-4">
       <h1 className="text-2xl">About</h1>
       <div className="flex flex-row text-justify">
         <img
@@ -22,7 +22,7 @@ const About: React.FC = () => (
           code. Just kidding, I actually have no idea what I'm doing.
         </div>
       </div>
-    </div>
+    </main>
   </div>
 );
 
