@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import Head from "next/head";
-import Header from "../../components/Header";
-import { Octokit } from "@octokit/rest";
-import Link from "next/link";
+import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Head from 'next/head';
+import Header from '../../components/Header';
+import { Octokit } from '@octokit/rest';
+import Link from 'next/link';
 
 type Data = {
   title: string;
@@ -30,11 +30,11 @@ const Slug: React.FC = () => {
   const [repo, setRepo] = useState<State>({
     loading: true,
     data: {
-      title: "Loading",
-      desc: "Please wait",
+      title: 'Loading',
+      desc: 'Please wait',
       archived: false,
-      lang: "bruh",
-      branch: "main",
+      lang: 'bruh',
+      branch: 'main',
       fork: true,
     },
   });
@@ -44,18 +44,18 @@ const Slug: React.FC = () => {
 
     octokit.repos
       .get({
-        owner: "manen",
-        repo: typeof slug == "string" ? slug : slug.join(""),
+        owner: 'manen',
+        repo: typeof slug == 'string' ? slug : slug.join(''),
       })
       .then(({ data }) => {
         setRepo({
           loading: false,
           data: {
             title: data.name,
-            desc: data.description || "",
+            desc: data.description || '',
             archived: data.archived,
-            lang: data.language || "",
-            branch: data["default_branch"],
+            lang: data.language || '',
+            branch: data['default_branch'],
             fork: data.fork,
           },
         });
@@ -66,38 +66,39 @@ const Slug: React.FC = () => {
     <div>
       <Head>
         <title>{repo.data.title} - manen</title>
-        <meta name="description" content={"Project " + slug + " by manen"} />
+        <meta name='description' content={'Project ' + slug + ' by manen'} />
       </Head>
       <Header />
-      <div className="p-4 bg-accent-100 dark:bg-accent-800">
+      <div className='p-4 bg-accent-100 dark:bg-accent-800'>
         <div>This project is imported from GitHub.</div>
-        <div className="text-xs text-accent-500 dark:text-accent-400">
+        <div className='text-xs text-accent-500 dark:text-accent-400'>
           <a
-            target="_blank"
-            href={"https://github.com/manen/" + repo.data.title}>
+            target='_blank'
+            href={'https://github.com/manen/' + repo.data.title}
+          >
             Open on GitHub
           </a>
         </div>
       </div>
       {repo.data.archived ? (
-        <div className="p-4 text-black bg-yellow-300">
+        <div className='p-4 text-black bg-yellow-300'>
           This project is archived.
         </div>
       ) : null}
-      <div className="m-4">
-        <div className="m-4 flex flex-row justify-center items-center">
+      <div className='m-4'>
+        <div className='m-4 flex flex-row justify-center items-center'>
           {repo.data.fork ? (
             <p>Fork</p>
           ) : (
-            <div className="p-2 transition-colors bg-accent-200 hover:bg-accent-300 dark:bg-accent-800 dark:hover:bg-accent-700 rounded-lg cursor-pointer">
-              <Link href={"/donate?s=" + repo.data.title}>Sponsor</Link>
+            <div className='p-2 transition-colors bg-accent-200 hover:bg-accent-300 dark:bg-accent-800 dark:hover:bg-accent-700 rounded-lg cursor-pointer'>
+              <Link href={'/donate?s=' + repo.data.title}>Sponsor</Link>
             </div>
           )}
-          <div className="flex-1 flex-row">
-            <p className="text-xl">{repo.data.desc}</p>
+          <div className='flex-1 flex-row'>
+            <p className='text-xl'>{repo.data.desc}</p>
           </div>
           <nav>
-            <span className="m-2">{repo.data.lang}</span>
+            <span className='m-2'>{repo.data.lang}</span>
           </nav>
         </div>
       </div>
