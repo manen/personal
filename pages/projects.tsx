@@ -45,6 +45,7 @@ const Projects: React.FC = () => {
         });
       });
   }, []);
+
   return (
     <div>
       <Head>
@@ -55,8 +56,16 @@ const Projects: React.FC = () => {
       <div className='m-4'>
         <h1 className='text-2xl'>Projects</h1>
         <div>
-          <h1 className='m-4 text-l'></h1>
-          <div className='m-4 flex flex-wrap'></div>
+          <h1 className='m-4 mb-0 text-l'>Featured</h1>
+          <p className='text-xs'>The ones I like</p>
+          <div className='m-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 gap-3'>
+            <Project
+              title='Vanilla'
+              desc='PWA shopping list'
+              lang='TypeScript'
+              link='/vanilla'
+            />
+          </div>
         </div>
         <div>
           <h1 className='m-4 mb-0 text-l'>All</h1>
