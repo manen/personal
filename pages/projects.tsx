@@ -2,7 +2,7 @@ import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/themes/material.css';
-import Header from '../../components/Header';
+import Header from '../components/Header';
 import Link from 'next/link';
 import { Octokit } from '@octokit/rest';
 
@@ -45,6 +45,7 @@ const Projects: React.FC = () => {
         });
       });
   }, []);
+
   return (
     <div>
       <Head>
@@ -55,20 +56,28 @@ const Projects: React.FC = () => {
       <div className='m-4'>
         <h1 className='text-2xl'>Projects</h1>
         <div>
-          <h1 className='m-4 text-l'></h1>
-          <div className='m-4 flex flex-wrap'></div>
+          <h1 className='m-4 mb-0 text-l'>Featured</h1>
+          <p className='text-xs'>The ones I like</p>
+          <div className='m-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 gap-3'>
+            <Project
+              title='Vanilla'
+              desc='PWA shopping list'
+              lang='TypeScript'
+              link='/vanilla'
+            />
+          </div>
         </div>
         <div>
           <h1 className='m-4 mb-0 text-l'>All</h1>
           <p className='text-xs'>Taken from my GitHub</p>
-          <div className='m-4 flex flex-wrap'>
+          <div className='m-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 gap-3'>
             {repos.data.map((repo) => (
               <Project
                 key={Math.random()}
                 title={repo.title}
                 desc={repo.desc}
                 lang={repo.lang}
-                link={'/projects/' + repo.title}
+                link={'/' + repo.title}
               />
             ))}
           </div>
@@ -90,7 +99,7 @@ const Project: React.FC<ProjectProps> = (props) => (
     <Link href={props.link || ''}>
       <div
         title={props.desc}
-        className='m-4 w-48 h-24 bg-accent-100 hover:bg-accent-200 dark:bg-accent-800 dark:hover:bg-accent-700 rounded-lg transition-colors flex items-center justify-center cursor-pointer'
+        className='p-4 bg-accent-100 hover:bg-accent-200 dark:bg-accent-800 dark:hover:bg-accent-700 rounded-lg transition-colors flex items-center justify-center cursor-pointer'
       >
         <h1 className='text-lg'>{props.title}</h1>
       </div>

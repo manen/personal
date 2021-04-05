@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import Header from '../../components/Header';
+import Header from '../components/Header';
 import { Octokit } from '@octokit/rest';
 import Link from 'next/link';
 
@@ -27,6 +27,7 @@ const Slug: React.FC = () => {
 
   if (!router.isReady) return <div>Loading</div>;
 
+  const [non, setNon] = useState(false);
   const [repo, setRepo] = useState<State>({
     loading: true,
     data: {
@@ -59,9 +60,30 @@ const Slug: React.FC = () => {
             fork: data.fork,
           },
         });
+      })
+      .catch(() => {
+        setNon(true);
       });
   }, []);
 
+  if (non)
+    return (
+      <div>
+        <Head>
+          <title>404 - What's that, huh?</title>
+        </Head>
+        <Header />
+        <div className='m-4'>
+          <p className='text-lg'>It seems like you got lost...</p>
+          <a
+            href='https://github.com/manen'
+            className='text-accent-400 dark:text-accent-500 text-sm'
+          >
+            How about checking my GitHub?
+          </a>
+        </div>
+      </div>
+    );
   return (
     <div>
       <Head>
@@ -86,18 +108,18 @@ const Slug: React.FC = () => {
         </div>
       ) : null}
       <div className='m-4'>
-        <div className='m-4 flex flex-row justify-center items-center'>
+        <div className='m-4 flex flex-row justify-center sm:justify-between items-center text-center'>
           {repo.data.fork ? (
             <p>Fork</p>
           ) : (
-            <div className='p-2 transition-colors bg-accent-200 hover:bg-accent-300 dark:bg-accent-800 dark:hover:bg-accent-700 rounded-lg cursor-pointer'>
+            <div className='hidden sm:block p-2 transition-colors bg-accent-200 hover:bg-accent-300 dark:bg-accent-800 dark:hover:bg-accent-700 rounded-lg cursor-pointer'>
               <Link href={'/donate?s=' + repo.data.title}>Sponsor</Link>
             </div>
           )}
-          <div className='flex-1 flex-row'>
+          <div className='flex flex-row'>
             <p className='text-xl'>{repo.data.desc}</p>
           </div>
-          <nav>
+          <nav className='hidden sm:block'>
             <span className='m-2'>{repo.data.lang}</span>
           </nav>
         </div>
