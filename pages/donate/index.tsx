@@ -33,7 +33,7 @@ const Donate: React.FC = () => {
             href='https://paypal.me/maneney'
             onClick={() => {
               setTimeout(() => {
-                location.href = '/donate/thankyou' + (s ? '?s=' + s : '');
+                router.push('/donate/thankyou' + (s ? '?s=' + s : ''));
               }, 100);
             }}
             className='px-14 py-8 bg-accent-200 hover:bg-accent-300 dark:bg-accent-800 dark:hover:bg-accent-700 text-xl transition-colors rounded-xl'
