@@ -27,6 +27,7 @@ const Slug: React.FC = () => {
 
   if (!router.isReady) return <div>Loading</div>;
 
+  const [non, setNon] = useState(false);
   const [repo, setRepo] = useState<State>({
     loading: true,
     data: {
@@ -59,9 +60,30 @@ const Slug: React.FC = () => {
             fork: data.fork,
           },
         });
+      })
+      .catch(() => {
+        setNon(true);
       });
   }, []);
 
+  if (non)
+    return (
+      <div>
+        <Head>
+          <title>404 - What's that, huh?</title>
+        </Head>
+        <Header />
+        <div className='m-4'>
+          <p className='text-lg'>It seems like you got lost...</p>
+          <a
+            href='https://github.com/manen'
+            className='text-accent-400 dark:text-accent-500 text-sm'
+          >
+            How about checking my GitHub?
+          </a>
+        </div>
+      </div>
+    );
   return (
     <div>
       <Head>
