@@ -86,18 +86,18 @@ const Slug: React.FC = () => {
         </div>
       ) : null}
       <div className='m-4'>
-        <div className='m-4 flex flex-row justify-center items-center'>
+        <div className='m-4 flex flex-row justify-center sm:justify-between items-center text-center'>
           {repo.data.fork ? (
             <p>Fork</p>
           ) : (
-            <div className='p-2 transition-colors bg-accent-200 hover:bg-accent-300 dark:bg-accent-800 dark:hover:bg-accent-700 rounded-lg cursor-pointer'>
+            <div className='hidden sm:block p-2 transition-colors bg-accent-200 hover:bg-accent-300 dark:bg-accent-800 dark:hover:bg-accent-700 rounded-lg cursor-pointer'>
               <Link href={'/donate?s=' + repo.data.title}>Sponsor</Link>
             </div>
           )}
-          <div className='flex-1 flex-row'>
+          <div className='flex flex-row'>
             <p className='text-xl'>{repo.data.desc}</p>
           </div>
-          <nav>
+          <nav className='hidden sm:block'>
             <span className='m-2'>{repo.data.lang}</span>
           </nav>
         </div>

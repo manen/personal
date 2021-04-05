@@ -2,7 +2,6 @@ import React from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Header from '../../components/Header';
-import Link from 'next/link';
 
 const Donate: React.FC = () => {
   const router = useRouter();
@@ -16,7 +15,9 @@ const Donate: React.FC = () => {
       </Head>
       <Header />
       <div className='m-4'>
-        <h1 className='font-black text-5xl'>Donate{s ? ' to ' + s : ''}</h1>
+        <h1 className='font-black text-4xl sm:text-5xl'>
+          Donate{s ? ' to ' + s : ''}
+        </h1>
         <div className='mt-1 text-sm text-accent-500 dark:text-accent-400'>
           <p>
             You can support {s || 'my work'} by donating
@@ -36,7 +37,7 @@ const Donate: React.FC = () => {
                 router.push('/donate/thankyou' + (s ? '?s=' + s : ''));
               }, 100);
             }}
-            className='px-14 py-8 bg-accent-200 hover:bg-accent-300 dark:bg-accent-800 dark:hover:bg-accent-700 text-xl transition-colors rounded-xl'
+            className='mt-4 sm:m-0 px-7 sm:px-14 py-6 sm:py-8 bg-accent-200 hover:bg-accent-300 dark:bg-accent-800 dark:hover:bg-accent-700 text-xl transition-colors rounded-xl'
           >
             Donate now
           </a>

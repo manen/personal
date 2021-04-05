@@ -16,8 +16,8 @@ const ThankYou: React.FC = () => {
       <Header />
       <main className='m-4'>
         <div className='m-4 font-black'>
-          <h1 className='text-4xl'>Thank you so much</h1>
-          <p className='text-xl'>for donating!</p>
+          <h1 className='text-2xl sm:text-4xl'>Thank you so much</h1>
+          <p className='text-lg sm:text-xl'>for donating!</p>
         </div>
         <p>
           Your donation helps support {s || 'me'}, and I <b>really</b>{' '}
