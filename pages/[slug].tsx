@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import Header from '../../components/Header';
+import Header from '../components/Header';
 import { Octokit } from '@octokit/rest';
 import Link from 'next/link';
 

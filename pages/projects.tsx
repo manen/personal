@@ -2,7 +2,7 @@ import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/themes/material.css';
-import Header from '../../components/Header';
+import Header from '../components/Header';
 import Link from 'next/link';
 import { Octokit } from '@octokit/rest';
 
@@ -68,7 +68,7 @@ const Projects: React.FC = () => {
                 title={repo.title}
                 desc={repo.desc}
                 lang={repo.lang}
-                link={'/projects/' + repo.title}
+                link={'/' + repo.title}
               />
             ))}
           </div>
