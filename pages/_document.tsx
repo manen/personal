@@ -7,6 +7,7 @@ import Document, {
   DocumentContext,
   DocumentInitialProps,
 } from 'next/document';
+import PlausibleProvider from 'next-plausible';
 
 class Doc extends Document {
   static async getInitialProps(
@@ -28,8 +29,15 @@ class Doc extends Document {
           ></script>
         </Head>
         <body className='p-0 m-0 font-sans text-center bg-accent-50 text-black dark:bg-accent-900 dark:text-accent-200'>
-          <Main />
-          <NextScript />
+          <PlausibleProvider
+            domain='manen.me'
+            customDomain='analytics.manen.me'
+            trackOutboundLinks
+            enabled={process.env.NODE_ENV != 'development'}
+          >
+            <Main />
+            <NextScript />
+          </PlausibleProvider>
         </body>
       </Html>
     );
