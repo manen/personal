@@ -32,7 +32,7 @@ const Donate: React.FC = () => {
           While it's completely optional, it'd be <b>really</b> greatly
           appreciated.
         </p>
-        <div className='mx-4 h-full grid grid-cols-3 gap-4'>
+        <div className='mx-4 h-full grid grid-cols-2 gap-4'>
           <a
             target='_blank'
             href='https://paypal.me/maneney'
@@ -56,16 +56,6 @@ const Donate: React.FC = () => {
               Bitcoin
             </div>
           </Link>
-          <a
-            target='_blank'
-            href='https://patreon.com/manen_'
-            onClick={() => {
-              plausible('Donate with Patreon');
-            }}
-            className='mt-4 sm:m-0 px-7 sm:px-14 py-6 sm:py-8 bg-accent-200 hover:bg-accent-300 dark:bg-accent-800 dark:hover:bg-accent-700 text-xl transition-colors rounded-xl'
-          >
-            Patreon
-          </a>
         </div>
       </div>
     </div>
