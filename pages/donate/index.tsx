@@ -35,9 +35,9 @@ const Donate: React.FC = () => {
         <div className='mx-4 h-full grid grid-cols-2 gap-4'>
           <a
             target='_blank'
-            href='https://paypal.me/maneney'
+            href='https://www.buymeacoffee.com/manen'
             onClick={() => {
-              plausible('Donate with PayPal');
+              plausible('Donate');
               setTimeout(() => {
                 router.push('/donate/thankyou' + (s ? '?s=' + s : ''));
               }, 100);
@@ -46,16 +46,6 @@ const Donate: React.FC = () => {
           >
             PayPal
           </a>
-          <Link href='/donate/bitcoin'>
-            <div
-              onClick={() => {
-                plausible('Donate with BTC');
-              }}
-              className='mt-4 sm:m-0 px-7 sm:px-14 py-6 sm:py-8 bg-accent-200 hover:bg-accent-300 dark:bg-accent-800 dark:hover:bg-accent-700 text-xl transition-colors rounded-xl cursor-pointer'
-            >
-              Bitcoin
-            </div>
-          </Link>
         </div>
       </div>
     </div>
