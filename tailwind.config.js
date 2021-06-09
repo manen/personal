@@ -22,6 +22,7 @@ module.exports = {
       bruh: {
         50: '#7289da',
         100: '#ffcc5b',
+        200: '#31a9f3',
       },
 
       transparent: colors.transparent,
