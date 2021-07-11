@@ -1,6 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
 import Header from '../components/Header';
+
+import Profile from '../public/img/192.png';
 
 const About: React.FC = () => (
   <div>
@@ -12,8 +15,13 @@ const About: React.FC = () => (
     <div className='m-4'>
       <h1 className='text-2xl'>About</h1>
       <div className='flex flex-row text-justify'>
-        <div className='mr-4 w-48 h-48'>
-          <img src='/img/192.png' alt='Profile Picture' />
+        <div className='mr-4'>
+          <Image
+            src={Profile}
+            placeholder='blur'
+            width='48'
+            height='48'
+          ></Image>
         </div>
         <div className='text-lg'>
           Hi, I'm <span className='text-bruh-100'>manen</span>, and I write
